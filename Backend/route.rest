@@ -1,0 +1,18 @@
+
+POST http://localhost:3000/retailers
+Content-Type: application/json
+
+{
+  "name": "Pizza Ghar",
+  "contactPerson": "Malik",
+  "phone": " type: String, required: true ",
+  "email":" type: String, required: true ",
+  "address": "type: String, required: true ",   
+  "latitude": "10",
+  "longitude": "10",
+  "cuisine": " type: String, required: true",
+  "avgFoodWaste": "10",
+  "schedule": "type: String, required: true",
+  "password": "Damak13",
+  "type": "Retailer"
+}
