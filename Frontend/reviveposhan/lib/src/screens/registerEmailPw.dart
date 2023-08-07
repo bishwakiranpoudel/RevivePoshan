@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:reviveposhan/colors.dart';
 import 'package:reviveposhan/src/api/Apiservice.dart';
 import 'package:reviveposhan/src/screens/homeScreen.dart';
-import 'package:reviveposhan/src/screens/registerScreen.dart';
+import 'package:reviveposhan/src/screens/loginScreen.dart';
 
-class LoginScreen extends StatefulWidget {
+class RegisterScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _RegisterScreenState createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -117,17 +117,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       ElevatedButton(
                         onPressed: () async {
-                          print('this');
-                          var response = await ApiService.login(
-                              _emailController.text.toString(),
-                              _passwordController.text.toString());
-                          print(response);
-                          if (response != null) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Home()),
-                            );
-                          }
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Home()),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           primary: AppColors.primaryColor,
@@ -136,22 +129,22 @@ class _LoginScreenState extends State<LoginScreen> {
                             vertical: 15.0,
                           ),
                         ),
-                        child: Text('Login'),
+                        child: Text('Next'),
                       ),
                       SizedBox(width: 20.0),
                       TextButton(
                         onPressed: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //       builder: (context) => RegisterScreen()),
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreen()),
+                          );
                         },
                         style: TextButton.styleFrom(
                           primary: AppColors
                               .primaryColor, // Set the text color to blue
                         ),
-                        child: Text('Register'),
+                        child: Text('Login'),
                       ),
                     ]),
                   ],
